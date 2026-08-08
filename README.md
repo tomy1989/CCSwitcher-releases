@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/windows-dark.png" alt="CCSwitcher" width="300">
+<img src="images/macos-dark.png" alt="CCSwitcher" width="300">
 
 # CCSwitcher
 
@@ -44,8 +44,17 @@ thread of what you were doing.
 | **Updates itself** | Signed with its own key and verified before a byte is written to disk. |
 
 <div align="center">
-<img src="images/windows-light.png" alt="CCSwitcher, light theme" width="330">
-<img src="images/windows-dark.png" alt="CCSwitcher, dark theme" width="330">
+
+<img src="images/macos-light.png" alt="CCSwitcher on macOS, light theme" width="330">
+<img src="images/macos-dark.png" alt="CCSwitcher on macOS, dark theme" width="330">
+
+<sub>**macOS**</sub>
+
+<img src="images/windows-light.png" alt="CCSwitcher on Windows, light theme" width="330">
+<img src="images/windows-dark.png" alt="CCSwitcher on Windows, dark theme" width="330">
+
+<sub>**Windows**</sub>
+
 </div>
 
 ---
@@ -67,7 +76,11 @@ overflow arrow the first time.
 ### macOS
 
 Download **`CCSwitcher_universal.dmg`** — one file, Apple Silicon and Intel —
-and drag it to Applications. It lives in the **menu bar, not the Dock**.
+and drag it to **Applications**. It lives in the **menu bar, not the Dock**.
+
+Keep it in `/Applications` rather than running it from the disk image: macOS
+resolves the app through LaunchServices to deliver notifications, and that only
+works from a real installed location.
 
 Gatekeeper quarantines unsigned builds:
 
@@ -75,9 +88,15 @@ Gatekeeper quarantines unsigned builds:
 xattr -cr /Applications/CCSwitcher.app
 ```
 
-> **The macOS build has not yet been run on hardware.** It compiles, tests and
-> release-builds on both architectures in CI, but nobody has watched it launch.
-> Treat the first run as a beta.
+> **Runs on hardware; not yet lived on.** It builds, installs, launches and
+> sits in the menu bar correctly on Apple Silicon. What nobody has done yet is
+> use it all day, every day — so treat the first week as a beta.
+
+> **macOS will ask for Keychain access again after an update — your accounts
+> are still there.** A Keychain grant is tied to the app's code signature, and
+> without a paid Apple Developer ID every build is signed with a hash that
+> changes each time, so macOS sees an update as a different app. Nothing is
+> deleted; click **Always Allow** and it holds until the next update.
 
 ### Then
 
