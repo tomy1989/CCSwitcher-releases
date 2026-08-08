@@ -6,8 +6,9 @@
 
 ### All your Claude Code accounts, one keystroke apart.
 
-A menu-bar app for macOS and a system-tray app for Windows. Live usage for
-every account, one-click switching, and automatic rotation when one runs dry.
+A menu-bar app for macOS and a system-tray app for Windows. See where every
+account stands, switch between them in one click, and let it rotate
+automatically when one runs dry.
 
 [![Download](https://img.shields.io/github/v/release/tomy1989/CCSwitcher-releases?label=download&style=for-the-badge&color=%23c25f3e)](https://github.com/tomy1989/CCSwitcher-releases/releases/latest)
 
@@ -35,7 +36,7 @@ thread of what you were doing.
 
 |  |  |
 |---|---|
-| **Every account at a glance** | 5-hour and 7-day usage for all of them, per-model limits, and a countdown to each reset. |
+| **Every account at a glance** | 5-hour and 7-day usage, per-model limits, and a countdown to each reset. The active account refreshes in the background; the others update when you hit Refresh, or automatically if you turn that on. |
 | **One-click switching** | Swaps the signed-in account and leaves everything else in your Claude Code setup exactly as it was. |
 | **Automatic rotation** | Opt in, and it moves you to a fresh account at a threshold you choose. Cooldown and hysteresis keep it from ping-ponging. |
 | **Nothing in plaintext** | Tokens go in the macOS Keychain or Windows Credential Manager. Never a config file, never a log, never off your machine. |
@@ -83,6 +84,11 @@ xattr -cr /Applications/CCSwitcher.app
 Click the icon → **Add Account…** → your browser opens Anthropic's own sign-in
 page. Repeat per account. Whichever account you are already signed in to is
 picked up automatically.
+
+> **Restart your Claude Code session after switching.** The CLI reads its
+> credentials once, at startup — so a session that was already open carries on
+> with the old account until you restart it. This is the one thing people
+> mistake for the switch not working.
 
 ---
 
