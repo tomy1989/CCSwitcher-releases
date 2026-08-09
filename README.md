@@ -88,6 +88,14 @@ Gatekeeper quarantines unsigned builds:
 xattr -cr /Applications/CCSwitcher.app
 ```
 
+> **macOS updates are manual for now.** The in-app updater cannot see macOS
+> builds yet — the release machine is a Windows box, which cannot produce a
+> Mac build, so `latest.json` currently lists Windows only. *Check for updates*
+> on a Mac reports that no matching platform was found rather than silently
+> claiming you are current. Download the `.dmg` from the
+> [latest release](https://github.com/tomy1989/CCSwitcher-releases/releases/latest)
+> and drag it over the old copy; your accounts and settings are untouched.
+
 > **Runs on hardware; not yet lived on.** It builds, installs, launches and
 > sits in the menu bar correctly on Apple Silicon. What nobody has done yet is
 > use it all day, every day — so treat the first week as a beta.
